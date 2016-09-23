@@ -2,8 +2,9 @@ package main
 
 import (
 	"log"
-	"myserver"
 	"net/http"
+
+	"../myserver"
 )
 
 const addr = "localhost:12345"
