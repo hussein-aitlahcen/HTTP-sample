@@ -10,15 +10,15 @@ import (
 const addr = "localhost:12345"
 
 func main() {
-	mux     := http.NewServeMux()
-	handler := &myserver.MyHandler{}
+	mux := http.NewServeMux()
 
 	mux.Handle("/favicon.ico", http.NotFoundHandler())
-	mux.Handle("/", handler)
+	mux.Handle("/visitors", &myserver.MyHandler{})
+	mux.Handle("/", &myserver.WelcomeHandler{Message: "TP inte"})
 
-	log.Printf("Now listening on %s...\n", addr)
+	log.Printf("Now l	istening on %s...\n", addr)
 
 	server := http.Server{Handler: mux, Addr: addr}
-	
+
 	log.Fatal(server.ListenAndServe())
 }
