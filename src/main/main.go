@@ -16,7 +16,7 @@ func main() {
 	mux.Handle("/visitors", &myserver.MyHandler{})
 	mux.Handle("/", &myserver.WelcomeHandler{Message: "TP inte"})
 
-	log.Printf("Now l	istening on %s...\n", addr)
+	log.Printf("Now listening on %s...\n", addr)
 
 	server := http.Server{Handler: mux, Addr: addr}
 
