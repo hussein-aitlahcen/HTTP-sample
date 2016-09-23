@@ -19,6 +19,5 @@ func main() {
 	log.Printf("Now listening on %s...\n", addr)
 
 	server := http.Server{Handler: mux, Addr: addr}
-
 	log.Fatal(server.ListenAndServe())
 }
